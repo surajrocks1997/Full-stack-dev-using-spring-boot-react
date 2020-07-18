@@ -22,5 +22,7 @@ Rural <input type="radio" name="type" value="RURAL"/>
 
 ${msg}
 
+<a href="displayLocations">View All</a>
+
 </body>
 </html>

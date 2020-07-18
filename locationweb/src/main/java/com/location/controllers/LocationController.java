@@ -1,5 +1,7 @@
 package com.location.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -26,5 +28,12 @@ public class LocationController {
 		String msg = "Location Saved with id: " + locationSaved.getId();
 		modelMap.addAttribute("msg", msg);
 		return "createLocation";
+	}
+	
+	@RequestMapping("/displayLocations")
+	public String displayLocations(ModelMap modelMap) {
+		List<Location> locations = service.getAllLocations();
+		modelMap.addAttribute("locations", locations);
+		return "displayLocations";
 	}
 }
